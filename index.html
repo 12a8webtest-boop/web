@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Bán Hàng</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>12A8</h1>
+    <div style="display:flex; gap:20px; align-items:center;">
+        <span class="menu-text" onclick="openMenuSidebar()">MENU</span>
+        <div class="cart-icon">🛒 <span class="cart-count" id="cart-count">0</span></div>
+    </div>
+</header>
+
+<div class="menu">
+    <div class="food-item">
+        <img src="https://via.placeholder.com/150" alt="Món A">
+        <h3>Món A</h3>
+        <p>50.000₫</p>
+        <button onclick="showPopup('Món A',50000,'https://via.placeholder.com/150')">🛒 Đặt món</button>
+    </div>
+    <div class="food-item">
+        <img src="https://via.placeholder.com/150" alt="Món B">
+        <h3>Món B</h3>
+        <p>60.000₫</p>
+        <button onclick="showPopup('Món B',60000,'https://via.placeholder.com/150')">🛒 Đặt món</button>
+    </div>
+    <div class="food-item">
+        <img src="https://via.placeholder.com/150" alt="Món C">
+        <h3>Món C</h3>
+        <p>70.000₫</p>
+        <button onclick="showPopup('Món C',70000,'https://via.placeholder.com/150')">🛒 Đặt món</button>
+    </div>
+    <div class="food-item">
+        <img src="https://via.placeholder.com/150" alt="Món D">
+        <h3>Món D</h3>
+        <p>80.000₫</p>
+        <button onclick="showPopup('Món D',80000,'https://via.placeholder.com/150')">🛒 Đặt món</button>
+    </div>
+</div>
+
+<!-- Overlay tối nền -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Popup món ăn -->
+<div class="popup" id="food-popup">
+    <img id="popup-img" src="" alt="">
+    <h2 id="popup-name"></h2>
+    <div class="price-quantity">
+        <span id="popup-price">0₫</span>
+        <div class="quantity-controls">
+            <button onclick="changeQuantity(-1)">-</button>
+            <span id="popup-quantity">1</span>
+            <button onclick="changeQuantity(1)">+</button>
+        </div>
+    </div>
+    <textarea id="popup-note" placeholder="Ghi chú (tùy chọn)"></textarea>
+    <div class="popup-actions">
+        <strong>Thành tiền: <span id="popup-total">0₫</span></strong>
+        <div>
+            <button onclick="addToCart()">🛒</button>
+            <button onclick="buyNow()">Mua hàng ngay</button>
+        </div>
+    </div>
+</div>
+
+<!-- Giỏ hàng -->
+<div class="cart-popup" id="cart-popup">
+    <h2>Giỏ hàng</h2>
+    <div id="cart-items"></div>
+    <p class="cart-total">Tổng: <span id="cart-total">0</span>₫</p>
+    <div class="cart-buttons">
+        <button onclick="closeCart()">Thêm món</button>
+        <button onclick="checkout()">Thanh toán</button>
+    </div>
+</div>
+
+<!-- Sidebar MENU -->
+<div class="menu-sidebar" id="menu-sidebar">
+    <h2>MENU</h2>
+    <ul>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Khách hàng</a></li>
+        <li><a href="#">Thống kê</a></li>
+    </ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

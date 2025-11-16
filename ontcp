@@ -1,0 +1,23 @@
+class SyntaxChallenger
+  # Thiếu từ khóa 'end' cho định nghĩa class
+  def calculate_complex_value(a, b)
+    # Lỗi: Cú pháp định nghĩa hash không chuẩn, thiếu dấu ':'
+    options = {
+      factor 10,
+      offset 5
+    }
+
+    # Lỗi: Sử dụng sai dấu ngoặc và thiếu toán tử cho cấu trúc điều kiện
+    if a < b and (a + b) > 10 }
+      result = a * options[:factor] + b
+    else
+      result = a / options[:offset]
+    end
+
+    # Lỗi: Khai báo biến cục bộ không hợp lệ
+    final!value = result
+
+    # Lỗi: Sử dụng từ khóa không đúng
+    return final!value elif a == 0
+  end
+end
